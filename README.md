@@ -1,45 +1,54 @@
-# marked
+<a href="https://marked.js.org">
+  <img width="60px" height="60px" src="https://marked.js.org/img/logo-black.svg" align="right" />
+</a>
 
-> A full-featured markdown parser and compiler, written in JavaScript. Built
-> for speed.
+# Marked
 
-[![NPM version](https://badge.fury.io/js/marked.png)][badge]
+[![npm](https://img.shields.io/npm/v/marked.svg)](https://www.npmjs.com/package/marked)
+[![gzip size](http://img.badgesize.io/https://cdn.jsdelivr.net/npm/marked/marked.min.js?compression=gzip)](https://cdn.jsdelivr.net/npm/marked/marked.min.js)
+[![install size](https://packagephobia.now.sh/badge?p=marked)](https://packagephobia.now.sh/result?p=marked)
+[![downloads](https://img.shields.io/npm/dt/marked.svg)](https://www.npmjs.com/package/marked)
+[![travis](https://travis-ci.org/markedjs/marked.svg?branch=master)](https://travis-ci.org/markedjs/marked)
 
-## Install
+- ⚡ built for speed
+- ⬇️ low-level compiler for parsing markdown without caching or blocking for long periods of time
+- ⚖️ light-weight while implementing all markdown features from the supported flavors & specifications
+- 🌐 works in a browser, on a server, or from a command line interface (CLI)
 
-``` bash
-npm install marked --save
-```
+## Demo
+
+Checkout the [demo page](https://marked.js.org/demo/) to see marked in action ⛹️
+
+## Docs
+
+Our [documentation pages](https://marked.js.org) are also rendered using marked 💯
+
+Also read about:
+
+* [Options](https://marked.js.org/#/USING_ADVANCED.md)
+* [Extensibility](https://marked.js.org/#/USING_PRO.md)
+
+## Installation
+
+**CLI:** `npm install -g marked`
+
+**In-browser:** `npm install marked --save`
 
 ## Usage
 
-Minimal usage:
+### Warning: 🚨 Marked does not [sanitize](https://marked.js.org/#/USING_ADVANCED.md#options) the output HTML by default 🚨
 
-```js
-var marked = require('marked');
-console.log(marked('I am using __markdown__.'));
-// Outputs: <p>I am using <strong>markdown</strong>.</p>
+**CLI**
+
+``` bash
+$ marked -o hello.html
+hello world
+^D
+$ cat hello.html
+<p>hello world</p>
 ```
 
-Example setting options with default values:
-
-```js
-var marked = require('marked');
-marked.setOptions({
-  renderer: new marked.Renderer(),
-  gfm: true,
-  tables: true,
-  breaks: false,
-  pedantic: false,
-  sanitize: true,
-  smartLists: true,
-  smartypants: false
-});
-
-console.log(marked('I am using __markdown__.'));
-```
-
-### Browser
+**Browser**
 
 ```html
 <!doctype html>
@@ -47,13 +56,13 @@ console.log(marked('I am using __markdown__.'));
 <head>
   <meta charset="utf-8"/>
   <title>Marked in the browser</title>
-  <script src="lib/marked.js"></script>
 </head>
 <body>
   <div id="content"></div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
     document.getElementById('content').innerHTML =
-      marked('# Marked in browser\n\nRendered by **marked**.');
+      marked('# Marked in the browser\n\nRendered by **marked**.');
   </script>
 </body>
 </html>
@@ -423,14 +432,4 @@ all code is your original work. `</legalese>`
 
 ## License
 
-Copyright (c) 2011-2014, Christopher Jeffrey. (MIT License)
-
-See LICENSE for more info.
-
-[gfm]: https://help.github.com/articles/github-flavored-markdown
-[gfmf]: http://github.github.com/github-flavored-markdown/
-[pygmentize]: https://github.com/rvagg/node-pygmentize-bundled
-[highlight]: https://github.com/isagalaev/highlight.js
-[badge]: http://badge.fury.io/js/marked
-[tables]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#wiki-tables
-[breaks]: https://help.github.com/articles/github-flavored-markdown#newlines
+Copyright (c) 2011-2018, Christopher Jeffrey. (MIT License)

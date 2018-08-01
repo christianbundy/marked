@@ -8,10 +8,10 @@
     }
   ],
   "version": "0.7.4",
+  "preferGlobal": true,
   "main": "./lib/marked.js",
   "bin": "./bin/marked",
   "man": "./man/marked.1",
-  "preferGlobal": true,
   "repository": "git://github.com/ssbc/marked.git",
   "homepage": "https://github.com/ssbc/marked",
   "bugs": {
@@ -29,12 +29,28 @@
     "html"
   ],
   "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-vuln-regex-detector": "^1.0.4",
+    "front-matter": "^2.3.0",
+    "glob-to-regexp": "0.3.0",
+    "html-differ": "^1.3.4",
+    "jasmine": "^3.1.0",
+    "jasmine2-custom-message": "^0.9.0",
     "markdown": "*",
+    "markdown-it": "*",
     "showdown": "*",
-    "robotskirt": "*"
+    "uglify-js": "^3.3.10"
   },
   "scripts": {
     "test": "node test",
     "bench": "node test --bench"
+  },
+  "engines": {
+    "node": ">=0.10.0"
   }
 }
